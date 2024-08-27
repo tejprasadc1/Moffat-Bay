@@ -4,4 +4,5 @@
 
 * Tej Chudali
 * Dom Monroe
+* Michael Richey
 * Joseph Issa

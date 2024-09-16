@@ -1,0 +1,5 @@
+# Created at 2024-09-15T13:59:29.146
+Boot Manifest-JAR contains absolute paths in classpath 'E:\Bellevue\MogtaBayLodgeV1\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

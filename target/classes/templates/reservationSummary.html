@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Reservation Summary</title>
+  <link rel="stylesheet" th:href="@{/Style.css}">
+</head>
+<body>
+<h1>Reservation Summary</h1>
+
+<div>
+  <p>Room Size: <span th:text="${reservation.roomSize}"></span></p>
+  <p>Number of Guests: <span th:text="${reservation.numGuests}"></span></p>
+  <p>Check-In Date: <span th:text="${reservation.checkInDate}"></span></p>
+  <p>Check-Out Date: <span th:text="${reservation.checkOutDate}"></span></p>
+</div>
+
+<div>
+  <form th:action="@{/reservation/confirm}" method="post">
+    <input type="hidden" th:value="${reservation.id}" name="reservationId" />
+    <button type="submit" class="button-primary">Confirm Reservation</button>
+    <a th:href="@{/reservation}" class="button-secondary">Cancel</a>
+  </form>
+</div>
+</body>
+</html>

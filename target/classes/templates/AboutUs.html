@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>About Us - Moffat Bay Lodge</title>
+    <link rel="stylesheet" th:href="@{/Style.css}">
 </head>
 <body>
-<h1>About Us </h1>
+<header class="header">
+    <div class="logo">
+        <!-- Smaller Logo -->
+        <img src="images/MoffatBay_Logo.png" alt="Moffat Bay Lodge Logo" style="width: 100px;">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="/attractions">Attractions</a></li>
+            <li><a href="/contactus">Contact Us</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            <li><a href="/reservation" class="button-primary">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
 
+<section class="about-us">
+    <h2>Welcome to Moffat Bay Lodge</h2>
+    <p>
+        Nestled in the tranquil embrace of Joviedsa Island, Moffat Bay Lodge offers an unparalleled retreat for those seeking to escape the everyday hustle.
+        Whether you’re looking to reconnect with nature, embark on exciting outdoor adventures, or simply unwind by the lakeside,
+        our lodge promises a rejuvenating experience like no other.
+        Wake up to the serene sounds of nature, breathe in the crisp mountain air, and immerse yourself in the breathtaking views that surround our picturesque location.
+        At Moffat Bay Lodge, we don’t just provide accommodation – we create lasting memories and experiences that leave you feeling revitalized and inspired.
+    </p>
+
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+        <img src="images/MoffatBayAbout Cabin.png" alt="Cabin View" />
+        <img src="images/MoffatBayAbout Lakeview.png" alt="Lake View" />
+    </div>
+
+    <!-- Five-Star Rating Section -->
+    <div class="five-star-section">
+        <h3>5-Star Experience</h3>
+        <img src="images/MoffatBay 5 Star.png" alt="5-Star Rating">
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-links">
+        <a href="/aboutus">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/services">Services</a>
+    </div>
+    <p>&copy; 2024 Moffat Bay Lodge. All rights reserved.</p>
+</footer>
 </body>
 </html>

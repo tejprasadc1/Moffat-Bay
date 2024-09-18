@@ -58,13 +58,16 @@ header {
 .hero h1 {
     font-size: 3em;
     margin: 0;
+    color: #FFD700; /* Gold color for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow to make the text pop */
 }
 
 .hero p {
     font-size: 1.5em;
     margin: 10px 0;
+    color: #FFFFFF; /* White color, but with shadow for more definition */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Adds shadow to the paragraph as well */
 }
-
 /* Features Section */
 .features {
     display: flex;
@@ -204,3 +207,67 @@ h1 {
         font-size: 2.5em;
     }
 }
+/* About Us Section */
+.about-us {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.image-gallery img {
+    width: 45%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.five-star-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.five-star-section img {
+    width: 200px;
+}
+
+.five-star-section h3 {
+    margin-top: 20px;
+    font-size: 1.8em;
+    color: #333;
+}
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column;
+    }
+    .image-gallery img {
+        width: 100%;
+        max-width: none;
+    }
+}
+

@@ -1,1 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Look Up Reservation - Moffat Bay Lodge</title>
+</head>
+<body>
+    <h1>Look Up Reservation</h1>
+    <form action="/lookupReservation" method="post">
+        <label for="reservationId">Reservation Number:</label>
+        <input type="text" id="reservationId" name="reservationId" required><br><br>
+        <button type="submit">Look Up</button>
+    </form>
+    <div id="reservationDetails"></div>
+</body>
+</html>
 

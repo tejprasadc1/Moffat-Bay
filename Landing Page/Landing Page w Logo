@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moffat Bay Lodge - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="https://github.com/dmon889523/MBL-Photos/images/MBL%20Logo.png" alt="Moffat Bay Lodge Logo">
+    </header>
+    <h1>Welcome to Moffat Bay Lodge</h1>
+</body>
+</html>

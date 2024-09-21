@@ -1,0 +1,16 @@
+@RestController
+public class ReservationController {
+
+    @Autowired
+    private ReservationRepository reservationRepository;
+
+    @PostMapping("/lookupReservation")
+    public ResponseEntity<Reservation> lookupReservation(@RequestParam Long reservationId) {
+        Optional<Reservation> reservation = reservationRepository.findById(reservationId);
+        if (reservation.isPresent()) {
+            return ResponseEntity.ok(reservation.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+    }
+}

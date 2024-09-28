@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractions - Moffat Bay Lodge</title>
+    <link rel="stylesheet" th:href="@{/Style.css}">
 </head>
 <body>
-<h1>Attractions page</h1>
+<!-- Header Section -->
+<header class="header">
+    <div class="logo">
+        <img src="/images/MoffatBay_Logo.png" alt="Moffat Bay Lodge Logo" style="width: 100px;">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="/attractions">Attractions</a></li>
+            <li><a href="/contactus">Contact Us</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            <li><a href="/reservation" class="button-primary">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
 
+<!-- Hero Section -->
+<section class="hero" style="background-image: url('/images/MoffatBayBackdrop.png'); background-size: cover; background-position: center;">
+    <div class="hero-content">
+        <h1>Explore Our Attractions</h1>
+        <p>Discover the beauty and adventures waiting at Moffat Bay Lodge</p>
+    </div>
+</section>
+
+<!-- Attractions Section -->
+<section class="attractions">
+    <div class="attraction-item">
+        <img src="/images/MoffatBayAttractions Hiking.png" alt="Hiking">
+        <h3>Scenic Hiking Trails</h3>
+        <p>Explore breathtaking hiking trails that wind through majestic landscapes, offering unforgettable views of the surrounding nature.</p>
+    </div>
+
+    <div class="attraction-item">
+        <img src="/images/MoffatBayAttractions Fishing.png" alt="Fishing">
+        <h3>Fishing at Moffat Bay</h3>
+        <p>Enjoy world-class fishing on our private lake. Whether you're an expert or a beginner, it's the perfect spot to catch your next big one.</p>
+    </div>
+
+    <div class="attraction-item">
+        <img src="/images/MoffatBayAttractions Kayaking.png" alt="Kayaking">
+        <h3>Kayaking Adventures</h3>
+        <p>Paddle along the serene waters of Moffat Bay with our kayaking excursions, offering a peaceful way to explore the natural beauty around you.</p>
+    </div>
+
+    <div class="attraction-item">
+        <img src="/images/MoffatBayAttractions Scenic.png" alt="Scenic Views">
+        <h3>Scenic Viewpoints</h3>
+        <p>Take in the stunning scenic viewpoints scattered across the lodge, offering panoramic vistas that will take your breath away.</p>
+    </div>
+
+    <div class="attraction-item">
+        <img src="/images/MoffatBayAttractions Spa.png" alt="Spa">
+        <h3>Relaxing Spa Treatments</h3>
+        <p>Unwind at our luxury spa with a variety of relaxing treatments that rejuvenate your body and mind after a day of adventure.</p>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/contactus">Contact Us</a>
+        <a href="/services">Services</a>
+    </div>
+    <p>&copy; 2024 Moffat Bay Lodge. All rights reserved.</p>
+</footer>
 </body>
 </html>

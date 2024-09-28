@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+  <meta charset="UTF-8">
   <title>Reservation Confirmation</title>
   <link rel="stylesheet" th:href="@{/Style.css}">
 </head>
 <body>
-<h1>Reservation Confirmed</h1>
+<!-- Header Section -->
+<header class="header">
+  <div class="logo">
+    <img src="/images/MoffatBay_Logo.png" alt="Moffat Bay Lodge Logo" style="width: 100px;">
+  </div>
+</header>
 
-<div>
-  <p>Your reservation has been successfully confirmed!</p>
-  <p>Room Size: <span th:text="${reservation.roomSize}"></span></p>
-  <p>Number of Guests: <span th:text="${reservation.numGuests}"></span></p>
-  <p>Check-In Date: <span th:text="${reservation.checkInDate}"></span></p>
-  <p>Check-Out Date: <span th:text="${reservation.checkOutDate}"></span></p>
-</div>
+<!-- Hero Section with Background Image -->
+<section class="hero" style="background-image: url('/images/MoffatBayBackdropLandingPage.png'); background-size: cover; background-position: center;">
+  <div class="confirmation-message">
+    <h2>Reservation Confirmed!</h2>
+    <p>Your reservation has been successfully confirmed. Thank you for choosing Moffat Bay Lodge! We look forward to your stay.</p>
 
-<div>
-  <a href="/" class="button-primary">Go to Home</a>
-</div>
+    <div class="reservation-details">
+      <p><strong>Email:</strong> <span th:text="${reservation.email}"></span></p>
+      <p><strong>Room Size:</strong> <span th:text="${reservation.roomSize}"></span></p>
+      <p><strong>Number of Guests:</strong> <span th:text="${reservation.numGuests}"></span></p>
+      <p><strong>Check-In Date:</strong> <span th:text="${reservation.checkInDate}"></span></p>
+      <p><strong>Check-Out Date:</strong> <span th:text="${reservation.checkOutDate}"></span></p>
+    </div>
+
+    <div class="confirmation-buttons">
+      <a href="/" class="button-primary">Go to Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/about-us">About Us</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <p>&copy; 2024 Moffat Bay Lodge. All rights reserved.</p>
+</footer>
 </body>
 </html>

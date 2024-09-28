@@ -1,39 +1,86 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Room Reservation</title>
+  <meta charset="UTF-8">
+  <title>Room Reservation - Moffat Bay Lodge</title>
   <link rel="stylesheet" th:href="@{/Style.css}">
 </head>
 <body>
-<h1>Book Your Stay at Moffat Bay Lodge</h1>
 
-<form th:action="@{/reservation}" method="post">
-  <div>
-    <label for="roomSize">Room Size</label>
-    <select id="roomSize" name="roomSize" required>
-      <option value="Double Full Beds">Double Full Beds</option>
-      <option value="Queen">Queen</option>
-      <option value="Double Queen Beds">Double Queen Beds</option>
-      <option value="King">King</option>
-    </select>
+<!-- Header Section -->
+<header class="header">
+  <div class="logo">
+    <img src="/images/MoffatBay_Logo.png" alt="Moffat Bay Lodge Logo" style="width: 100px;">
   </div>
-  <div>
-    <label for="numGuests">Number of Guests</label>
-    <input type="number" id="numGuests" name="numGuests" min="1" max="5" required>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+      <li><a href="/attractions">Attractions</a></li>
+      <li><a href="/contactus">Contact Us</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+      <li><a href="/lookupReservation" class="button-primary">Lookup-Reservation</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section with Background Image and Reservation Form -->
+<section class="hero" style="background-image: url('/images/MoffatBayBackdropLandingPage.png'); background-size: cover; background-position: center;">
+  <div class="hero-content">
+    <h3>Book Your Stay at Moffat Bay Lodge</h3>
   </div>
-  <div>
-    <label for="checkInDate">Check-In Date</label>
-    <input type="date" id="checkInDate" name="checkInDate" required>
+
+  <!-- Reservation Form overlapping the background -->
+  <div class="reservation-form">
+    <form th:action="@{/reservation}" method="post">
+      <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label for="roomSize">Room Size</label>
+        <select id="roomSize" name="roomSize" required>
+          <option value="Double Full Beds">Double Full Beds</option>
+          <option value="Queen">Queen</option>
+          <option value="Double Queen Beds">Double Queen Beds</option>
+          <option value="King">King</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="numGuests">Number of Guests</label>
+        <input type="number" id="numGuests" name="numGuests" min="1" max="5" required>
+      </div>
+
+      <div>
+        <label for="checkInDate">Check-In Date</label>
+        <input type="date" id="checkInDate" name="checkInDate" required>
+      </div>
+
+      <div>
+        <label for="checkOutDate">Check-Out Date</label>
+        <input type="date" id="checkOutDate" name="checkOutDate" required>
+      </div>
+
+      <div>
+        <button type="submit" class="button-primary">Submit Reservation</button>
+        <button type="reset" class="button-secondary">Cancel</button>
+      </div>
+    </form>
   </div>
-  <div>
-    <label for="checkOutDate">Check-Out Date</label>
-    <input type="date" id="checkOutDate" name="checkOutDate" required>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/aboutus">About Us</a>
+    <a href="/contact">Contact</a>
+    <a href="/attractions">Attractions</a>
   </div>
-  <div>
-    <button type="submit" class="button-primary">Submit Reservation</button>
-    <button type="reset" class="button-secondary">Cancel</button>
-  </div>
-</form>
+  <p>&copy; 2024 Moffat Bay Lodge. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

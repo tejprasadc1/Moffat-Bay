@@ -1,11 +1,15 @@
 com\assignment6\MogtaBayLodgeV1\Guest\Guest.class
 com\assignment6\MogtaBayLodgeV1\config\SecurityConfig.class
+com\assignment6\MogtaBayLodgeV1\ContactUs\Contact.class
+com\assignment6\MogtaBayLodgeV1\ContactUs\ContactService.class
+com\assignment6\MogtaBayLodgeV1\ContactUs\ContactController.class
 com\assignment6\MogtaBayLodgeV1\Reservation\Reservation.class
 com\assignment6\MogtaBayLodgeV1\Guest\GuestController.class
 com\assignment6\MogtaBayLodgeV1\Reservation\ReservationRepository.class
 com\assignment6\MogtaBayLodgeV1\Reservation\ReservationService.class
 com\assignment6\MogtaBayLodgeV1\Guest\GuestRepository.class
 com\assignment6\MogtaBayLodgeV1\Reservation\ReservationController.class
+com\assignment6\MogtaBayLodgeV1\ContactUs\ContactRepository.class
 com\assignment6\MogtaBayLodgeV1\Guest\GuestService.class
 com\assignment6\MogtaBayLodgeV1\HomeController.class
 com\assignment6\MogtaBayLodgeV1\MogtaBayLodgeV1Application.class

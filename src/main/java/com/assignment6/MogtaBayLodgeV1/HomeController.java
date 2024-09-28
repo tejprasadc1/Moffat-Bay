@@ -17,13 +17,14 @@ public class HomeController {
 
     @GetMapping("/contactus")
     public String contactus() {
-        return "Contact";
+        return "ContactUs";
     }
 
     @GetMapping("/attractions")
     public String attractions() {
         return "Attractions";
     }
+
 
 
 }

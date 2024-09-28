@@ -5,8 +5,17 @@
     <link rel="stylesheet" th:href="@{/Style.css}">
 </head>
 <body>
-<div class="login-container">
-    <h1>Guest Login</h1>
+<!-- Header Section (same as other pages) -->
+<header class="header">
+    <div class="logo">
+        <img src="/images/MoffatBay_Logo.png" alt="Moffat Bay Lodge Logo" style="width: 100px;">
+    </div>
+</header>
+
+<!-- Hero Section  -->
+<section class="hero" style="background-image: url('/images/MoffatBayBackdropLandingPage.png'); background-size: cover; background-position: center;">
+    <div class="form">
+        <h1>Guest Login</h1>
     <form th:action="@{/login}" method="post" class="login-form">
         <div class="form-group">
             <label for="email">Email:</label>
@@ -25,5 +34,18 @@
         <p th:text="${errorMessage}"></p>
     </div>
 </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-links">
+        <a href="/">Go to Home </a>
+        <a href="/aboutus">About Us</a>
+        <a href="/contact">Contact</a>
+
+    </div>
+    <p>&copy; 2024 Moffat Bay Lodge. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

@@ -20,32 +20,49 @@ public class ReservationController {
     }
 
     @PostMapping("/reservation")
-    public String submitReservation(@RequestParam("roomSize") String roomSize,
+    public String submitReservation(@RequestParam("email") String email,
+                                    @RequestParam("roomSize") String roomSize,
                                     @RequestParam("numGuests") int numGuests,
                                     @RequestParam("checkInDate") String checkInDate,
                                     @RequestParam("checkOutDate") String checkOutDate,
                                     Model model) {
         // Create reservation object and save it to the database
-        Reservation reservation = new Reservation(roomSize, numGuests, checkInDate, checkOutDate);
+        Reservation reservation = new Reservation(email, roomSize, numGuests, checkInDate, checkOutDate);
         reservationService.saveReservation(reservation);
 
         model.addAttribute("reservation", reservation);
         return "reservationSummary";
     }
 
-    // New method to handle /reservation/confirm
+    @GetMapping("/lookupReservation")
+    public String lookupReservation(){
+        return "LookUpReservation";
+    }
+
+    @PostMapping("/lookupReservation")
+    public String lookupReservation(@RequestParam("email") String email,
+                                    @RequestParam("reservationId") Long reservationId,
+                                    Model model) {
+        // Look up reservation by email and ID
+        Reservation reservation = reservationService.findByEmailAndReservationId(email, reservationId);
+        if (reservation != null) {
+            model.addAttribute("reservation", reservation);
+            return "reservationDetails"; // Show reservation details
+        } else {
+            model.addAttribute("error", "Reservation not found.");
+            return "lookUpReservation"; // Redirect back to lookup page
+        }
+    }
+
     @PostMapping("/reservation/confirm")
     public String confirmReservation(@RequestParam("reservationId") Long reservationId, Model model) {
-        // Fetch reservation details based on reservationId (optional logic if needed)
         Reservation reservation = reservationService.findById(reservationId);
         if (reservation == null) {
             model.addAttribute("errorMessage", "Reservation not found.");
             return "errorPage"; // Create a custom error page if needed
         }
 
-        // Logic for confirming the reservation (optional)
-
         model.addAttribute("reservation", reservation);
-        return "reservationConfirmation"; // This should be your confirmation page
+        return "reservationConfirmation"; // confirmation page
     }
 }

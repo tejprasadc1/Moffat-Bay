@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+  <meta charset="UTF-8">
   <title>Reservation Summary</title>
   <link rel="stylesheet" th:href="@{/Style.css}">
 </head>
 <body>
-<h1>Reservation Summary</h1>
+<!-- Header Section -->
+<header class="header">
+  <div class="logo">
+    <img src="/images/MoffatBay_Logo.png" alt="Moffat Bay Lodge Logo" style="width: 100px;">
+  </div>
+</header>
 
-<div>
-  <p>Room Size: <span th:text="${reservation.roomSize}"></span></p>
-  <p>Number of Guests: <span th:text="${reservation.numGuests}"></span></p>
-  <p>Check-In Date: <span th:text="${reservation.checkInDate}"></span></p>
-  <p>Check-Out Date: <span th:text="${reservation.checkOutDate}"></span></p>
-</div>
+<!-- Hero Section with Background Image -->
+<section class="hero" style="background-image: url('/images/MoffatBayBackdropLandingPage.png'); background-size: cover; background-position: center;">
+  <div class="reservation-summary">
+    <h2>Reservation Summary</h2>
 
-<div>
-  <form th:action="@{/reservation/confirm}" method="post">
-    <input type="hidden" th:value="${reservation.id}" name="reservationId" />
-    <button type="submit" class="button-primary">Confirm Reservation</button>
-    <a th:href="@{/reservation}" class="button-secondary">Cancel</a>
-  </form>
-</div>
+    <div class="reservation-details">
+      <p><strong>Email:</strong> <span th:text="${reservation.email}"></span></p>
+      <p><strong>Room Size:</strong> <span th:text="${reservation.roomSize}"></span></p>
+      <p><strong>Number of Guests:</strong> <span th:text="${reservation.numGuests}"></span></p>
+      <p><strong>Check-In Date:</strong> <span th:text="${reservation.checkInDate}"></span></p>
+      <p><strong>Check-Out Date:</strong> <span th:text="${reservation.checkOutDate}"></span></p>
+    </div>
+
+    <div class="reservation-buttons">
+      <form th:action="@{/reservation/confirm}" method="post">
+        <div>
+        <input type="hidden" th:value="${reservation.id}" name="reservationId" />
+        <button type="submit" class="button-primary">Confirm Reservation</button>
+
+    </div>
+        <div>
+        <a th:href="@{/reservation}" class="button-secondary">Cancel</a>
+        </div>
+
+      </form>
+
+  </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/about-us">About Us</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <p>&copy; 2024 Moffat Bay Lodge. All rights reserved.</p>
+</footer>
 </body>
 </html>

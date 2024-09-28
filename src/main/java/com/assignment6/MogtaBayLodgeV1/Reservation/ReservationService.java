@@ -16,5 +16,9 @@ public class ReservationService {
     public Reservation findById(Long id) {
         return reservationRepository.findById(id).orElse(null);
     }
-}
 
+    // Method to find by email and reservation ID
+    public Reservation findByEmailAndReservationId(String email, Long reservationId) {
+        return reservationRepository.findByEmailAndId(email, reservationId);
+    }
+}

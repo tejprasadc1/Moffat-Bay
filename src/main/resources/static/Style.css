@@ -55,8 +55,6 @@ header {
     background-color: #999;
 }
 
-
-
 /* Hero Section */
 .hero {
     background: url('hero-bg.jpg') no-repeat center center/cover;
@@ -76,8 +74,9 @@ header {
 }
 
 .hero h2 {
-color: #FFD700;
+    color: #FFD700;
 }
+
 .hero p {
     font-size: 1.5em;
     margin: 10px 0;
@@ -165,6 +164,7 @@ form input, form button, form textarea {
 form button {
     cursor: pointer;
 }
+
 form label {
     display: block;
     font-size: 1.2em;
@@ -226,15 +226,7 @@ form label {
     font-size: 1.8em;
     color: #333;
 }
-@media (max-width: 768px) {
-    .image-gallery {
-        flex-direction: column;
-    }
-    .image-gallery img {
-        width: 100%;
-        max-width: none;
-    }
-}
+
 /* Reservation Form Section */
 .reservation-form {
     padding: 40px;
@@ -271,24 +263,66 @@ form label {
 
 /* Contact Form Styling */
 .contact-form {
-    max-width: 500px;
+    max-width: 600px; /* Increased width */
     margin: 0 auto;
-    padding: 30px;
+    padding: 40px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .contact-form h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
     color: #002d72;
 }
 
 .contact-form label {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 8px;
+    font-size: 1.3em; /* Increased label font size */
+    color: #002d72;
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px; /* Larger padding for better user experience */
+    font-size: 1.1em; /* Increased font size */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Softer corners */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form .button-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.contact-form .button-primary:hover {
+    background-color: #45a049;
+}
+
+.contact-form .button-secondary {
+    background-color: #ccc;
+    color: black;
+}
+
+.contact-form .button-secondary:hover {
+    background-color: #999;
 }
 
 /* Overlapping form styling for reservation and contact form */
@@ -340,179 +374,37 @@ form label {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .attractions {
+        flex-direction: column;
+    }
+
     .attraction-item {
-        flex-basis: 45%;
+        flex-basis: 100%;
     }
+}
 
-    .form,
-    .contact-form,
-    .reservation-form {
-        width: 90%;
-    }
-
+@media (max-width: 480px) {
     .hero h1 {
-        font-size: 2.5em;
-    }
-}
-
-@media (max-width: 400px) {
-    .login-container, form {
-        width: 100%;
-        padding: 1rem;
+        font-size: 2em;
     }
 
-    h1 {
-        font-size: 20px;
+    .hero p {
+        font-size: 1em;
     }
-
-    .hero h1 {
-        font-size: 2.5em;
-    }
-}
-/* Reservation Confirmation Styling */
-.confirmation-message {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.confirmation-message h2 {
-    font-size: 2.5em;
-    color: #002d72;
-    margin-bottom: 20px;
-}
-
-.confirmation-message p {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.reservation-details p {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.reservation-details strong {
-    color: #002d72;
-    font-weight: bold;
-}
-
-.confirmation-buttons {
-    margin-top: 20px;
-}
-
-.confirmation-buttons .button-primary {
-    padding: 12px 30px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-.confirmation-buttons .button-primary:hover {
-    background-color: #45a049;
-}
-/* Confirmation Message Styling */
-.confirmation-message {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.confirmation-message h2 {
-    font-size: 2.5em;
-    color: #002d72;
-    margin-bottom: 20px;
-}
-
-.confirmation-message p {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.reservation-details p {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.reservation-details strong {
-    color: #002d72;
-    font-weight: bold;
-}
-
-.confirmation-buttons {
-    margin-top: 20px;
-}
-
-.confirmation-buttons .button-primary {
-    padding: 12px 30px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-.confirmation-buttons .button-primary:hover {
-    background-color: #45a049;
-}
-/* Reservation Summary Styling */
-.reservation-summary {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.reservation-summary h2 {
-    font-size: 2.5em;
-    color: #002d72;
-    margin-bottom: 20px;
-}
-
-.reservation-summary .reservation-details p {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.reservation-details strong {
-    color: #002d72;
-    font-weight: bold;
-}
-
-.reservation-buttons {
-    margin-top: 20px;
-}
-
-.reservation-buttons .button-primary {
-    padding: 12px 30px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-.reservation-buttons .button-primary:hover {
-    background-color: #45a049;
 }

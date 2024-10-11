@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+  <meta charset="UTF-8">
   <title>Guest Dashboard</title>
+  <link rel="stylesheet" th:href="@{/Style.css}">
 </head>
 <body>
-<h1>Welcome to your dashboard!</h1>
+
+<!-- Header Section -->
+<header class="header">
+  <div class="logo">
+    <img src="/images/MoffatBay_Logo.png" alt="Moffat Bay Lodge Logo" style="width: 100px;">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+      <li><a href="/reservation">Make a Reservation</a></li>
+      <li><a href="/account">Account Settings</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Dashboard Main Content -->
+<section class="dashboard">
+  <h1>Welcome to Your Dashboard</h1>
+  <div class="dashboard-content">
+    <p>Here you can view your recent reservations, make new reservations, and manage your account settings.</p>
+
+    <div class="dashboard-actions">
+      <a href="/reservation" class="button-primary">Make a New Reservation</a>
+      <a href="/lookupReservation" class="button-secondary">View Your Reservations</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/about-us">About Us</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <p>&copy; 2024 Moffat Bay Lodge. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

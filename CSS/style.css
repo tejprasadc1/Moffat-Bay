@@ -1,0 +1,181 @@
+/* Global Styles */
+body {
+    font-family: 'Georgia', serif;
+    color: #3B362C;
+    background-color: #FCF8ED;
+}
+
+h1, h2, h3, h4, h5, h6, .logo-text {
+    font-family: 'Career', sans-serif;
+    color: #3B362C;
+}
+
+a {
+    color: #942F34;
+}
+
+a:hover {
+    color: #DB9C60;
+}
+
+/* Header */
+.header {
+    background-color: #3B362C;
+    padding: 20px;
+    text-align: center;
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header nav ul li a {
+    color: #FCF8ED;
+    text-decoration: none;
+}
+
+.header nav ul li a:hover {
+    color: #DDF4F7;
+}
+
+/* Footer */
+.footer {
+    background-color: #3B362C;
+    color: #FCF8ED;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Buttons */
+.button-primary {
+    background-color: #942F34;
+    color: #FCF8ED;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background-color: #DB9C60;
+    color: #3B362C;
+}
+
+/* Input fields */
+input[type="text"], input[type="date"], input[type="number"], select {
+    border: 1px solid #DB9C60;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input[type="text"]:focus, input[type="date"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #942F34;
+}
+
+/* Sections */
+.hero {
+    background: url('hero.jpg') no-repeat center center;
+    background-size: cover;
+    color: #FCF8ED;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero-content h1, .hero-content p {
+    margin: 0;
+}
+
+.features, .testimonials {
+    padding: 40px;
+    text-align: center;
+}
+
+.feature-item, .testimonial-item {
+    margin-bottom: 20px;
+}
+
+.our-story {
+    padding: 40px;
+    background-color: #DDF4F7;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.team {
+    padding: 40px;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-member {
+    margin: 20px;
+    text-align: center;
+}
+
+.mission-vision {
+    padding: 40px;
+    background-color: #F2D5BA;
+}
+
+.contact-us {
+    padding: 40px;
+}
+
+.contact-form {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+.search-filter {
+    margin-bottom: 20px;
+}
+
+.attractions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.attraction-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.lodge-reservation, .reservation-summary, .reservation-lookup {
+    padding: 40px;
+}
+
+.lodge-reservation form, .reservation-summary {
+    max-width: 600px;
+    margin: auto;
+}
+
+.reservation-summary {
+    background-color: #F2D5BA;
+}
+
+.reservation-lookup form {
+    max-width: 400px;
+    margin: auto;
+}

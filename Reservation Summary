@@ -1,0 +1,60 @@
+<?php
+// Include database connection
+include 'db_connect.php'; // Ensure this file contains the MySQL connection details
+
+// Get reservation ID from URL parameter
+$reservationID = isset($_GET['reservationID']) ? intval($_GET['reservationID']) : 0;
+
+if ($reservationID > 0) {
+    // Prepare SQL query to fetch reservation details
+    $stmt = $conn->prepare("SELECT r.ReservationID, u.Name, r.RoomID, ro.RoomType, r.StartDate, r.EndDate, r.TotalPrice 
+                             FROM Reservations r 
+                             JOIN Users u ON r.UserID = u.UserID 
+                             JOIN Rooms ro ON r.RoomID = ro.RoomID 
+                             WHERE r.ReservationID = ?");
+    $stmt->bind_param("i", $reservationID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        $reservation = $result->fetch_assoc();
+    } else {
+        $error = "Reservation not found.";
+    }
+} else {
+    $error = "Invalid reservation ID.";
+}
+
+$stmt->close();
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Summary | Moffat Bay Lodge</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Reservation Summary</h1>
+    </header>
+    <main>
+        <section>
+            <?php if (isset($reservation)): ?>
+                <h2>Reservation Details</h2>
+                <p><strong>Reservation ID:</strong> <?php echo htmlspecialchars($reservation['ReservationID']); ?></p>
+                <p><strong>Guest Name:</strong> <?php echo htmlspecialchars($reservation['Name']); ?></p>
+                <p><strong>Room Type:</strong> <?php echo htmlspecialchars($reservation['RoomType']); ?></p>
+                <p><strong>Check-in Date:</strong> <?php echo htmlspecialchars($reservation['StartDate']); ?></p>
+                <p><strong>Check-out Date:</strong> <?php echo htmlspecialchars($reservation['EndDate']); ?></p>
+                <p><strong>Total Price:</strong> <?php echo htmlspecialchars($reservation['TotalPrice']); ?></p>
+            <?php elseif (isset($error)): ?>
+                <p><?php echo htmlspecialchars($error); ?></p>
+            <?php endif; ?>
+        </section>
+    </main>
+</body>
+</html>

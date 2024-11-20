@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Reservation | Moffat Bay Lodge</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Your CSS file -->
+</head>
+<body>
+    <h1>Room Reservation</h1>
+    <form action="process_reservation.php" method="POST">
+        <label for="roomType">Select Room Type:</label>
+        <select id="roomType" name="roomType" required>
+            <!-- Room types will be dynamically loaded from the database -->
+        </select>
+        
+        <label for="checkin">Check-in Date:</label>
+        <input type="date" id="checkin" name="checkin" required>
+        
+        <label for="checkout">Check-out Date:</label>
+        <input type="date" id="checkout" name="checkout" required>
+
+        <label for="totalPrice">Total Price:</label>
+        <input type="text" id="totalPrice" name="totalPrice" readonly>
+
+        <input type="submit" value="Reserve Now">
+    </form>
+
+    <script>
+        // JavaScript to handle dynamic price calculation based on date selection
+        document.getElementById('checkout').addEventListener('change', function() {
+            const checkin = new Date(document.getElementById('checkin').value);
+            const checkout = new Date(this.value);
+            const roomType = document.getElementById('roomType').value;
+
+            if (checkin && checkout && roomType) {
+                const days = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24)); // Calculate total days
+                const pricePerNight = roomType.split('|')[1]; // Assuming roomType contains "RoomType|Price"
+                document.getElementById('totalPrice').value = `$${days * pricePerNight}`;
+            }
+        });
+    </script>
+</body>
+</html>
